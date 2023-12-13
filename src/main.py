@@ -18,9 +18,7 @@ async def root():
                         truncation=True,return_tensors='tf',return_token_type_ids=False,verbose=True,return_attention_mask=True)
     input_obj = {'input_ids': encoded['input_ids'], 'attention_mask': encoded['attention_mask']}
     prediction = model.predict(input_obj)
-    print(type(prediction))
     pred_arr = prediction.tolist()
-    print(type(pred_arr))
     output = {
         "neutral": prediction[0][0],
         "scam": prediction[0][1],

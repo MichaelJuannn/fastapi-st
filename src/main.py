@@ -8,8 +8,8 @@ class Prediction(BaseModel):
     text: str
 
 app = FastAPI()
-tokenizer = BertTokenizer.from_pretrained('./assets/')
-model = keras.models.load_model('./model/scam_class.h5',custom_objects={"TFBertModel": TFBertModel})
+tokenizer = BertTokenizer.from_pretrained('./src/assets/')
+model = keras.models.load_model('./src/model/scam_class.h5',custom_objects={"TFBertModel": TFBertModel})
 
 @app.get("/")
 async def root():

@@ -2,16 +2,16 @@
 FROM python:3.9
 
 # 
-WORKDIR /code
+WORKDIR /app
 
 # 
-COPY ./requirements.txt /code/requirements.txt
+COPY ./ /app/
 
 # 
 RUN pip install fastapi uvicorn tensorflow==2.14.0 transformers 
 
 # 
-COPY ./src /code/src
+
 
 # 
 CMD ["fastapi", "run", "src/main.py", "--port", "3030"]

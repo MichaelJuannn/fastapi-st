@@ -13,5 +13,6 @@ RUN pip install fastapi uvicorn tensorflow==2.14.0 transformers
 # 
 
 
+
 # 
-CMD ["fastapi", "run", "src/main.py", "--port", "3030"]
+# CMD ["fastapi", "run", "src/main.py", "--port", "3030"]
